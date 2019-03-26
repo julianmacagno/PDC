@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 1 - JQuery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap-4.3.1/css/bootstrap.min.css">
+    <script src="./bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+    <script type="text/javascript" src="./js/script.js"></script>
+</head>
+<body>
+    <div class="container-fluid" id="table">
+        <div id="header" class="row">
+            <div class="col">
+                <label>Apellido</label>
+            </div>
+            <div class="col">
+                <label>Nombre</label>
+            </div>
+            <div class="col">
+                <label>Parentesco</label>
+            </div>
+            <div class="col">
+                <label>Nacimiento</label>
+            </div>
+            <div class="col">
+                <label>¿Vive?</label>
+            </div>
+            <div class="col">
+                <label>Ocupaci&oacute;n</label>
+            </div>
+            <div class="col">
+                    <label>E-mail</label>
+            </div>
+            <div class="col">
+                <label>&nbsp;</label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <button onclick="addRow('', '', '', 0, '', '', '')"> Agregar </button>
+        <button onclick="clean()"> Limpiar </button>
+        <button onclick="saveForm()"> Enviar por email </button>
+    </div>
+</body>
+</html>
