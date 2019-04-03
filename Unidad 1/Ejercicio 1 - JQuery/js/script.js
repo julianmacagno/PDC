@@ -24,10 +24,9 @@ function deleteOne(handler) {
 function saveForm() {
     var rowsCounterTemp = 0;
     if (typeof(Storage) !== undefined) {
-        if (localStorage.people !== undefined)
-            people = JSON.parse(localStorage.people);
-        
-        $("div:not([id=header]).row").each(function(i) { //loop a travez de todas las columnas con gente
+        people = []; 
+        var validFields = true;
+        $("div:not([id=header]).row").each(function(i) {
             var p = {
                 surname: $("[name=surname]", $(this)).val(),
                 name: $("[name=name]", $(this)).val(),
@@ -39,37 +38,34 @@ function saveForm() {
             };
 
             //controlar que los campos no queden vacios
-            if(p.surname !== "" && p.name !== "" && p.relationship !== "" && (p.birthdate > 0 || p.birthdate !== "") && ((p.ocupation !== "" && p.email != "" && p.live == "yes") || p.live == "no")) {
-                if (people !== []) {
-                    var flag = false;
-                    for (var i = 0; i < people.length; i++) {
-                        if(people[i].surname == p.surname && people[i].name == p.name && 
-                            people[i].relationship == p.relationship) {
-                                console.log("El usuario " + p.surname + " " + p.name + " ya esta en la tabla");
-                                flag = true;
-                                break;
-                        }
-                    }
-                    if(!flag) {
-                        console.log(p.surname + " " + p.name + " agregado por no estar repetido");
-                        people.push(p);
+            if(p.surname !== "" && p.name !== "" && p.relationship !== "" && p.birthdate > 0 && p.birthdate !== "" && ((p.ocupation !== "" && p.email != "" && p.live == "yes") || p.live == "no")) {
+                //controla que la persona no este en la TABLA
+                for (var i = 0; i < people.length; i++) {
+                    if(people[i].surname == p.surname && people[i].name == p.name && 
+                        people[i].relationship == p.relationship) {
+                            validFields = false; //se pone el falso para que no se envie
+                            alert("El usuario " + p.surname + " " + p.name + " ya esta en la tabla");
+                            return false;
                     }
                 }
-                else {
-                    console.log(p.surname + " " + p.name + " agregado por storage vacio");
-                    people.push(p);
-                }
-                rowsCounterTemp++;
+                if(validFields)
+                    people.push(p); //comentar para volver a la funcionalidad que controla
             }
             else {
+                validFields = false;
                 alert("Ningun campo debe contener valores vacios o invalidos.");
                 return false;
             }
+            rowsCounterTemp++;
         });
-        localStorage.people = JSON.stringify(people);
+        //Si no hubo un problema con los datos, agregar y enviar el email
+        if(validFields) {
+            localStorage.people = JSON.stringify(people);
+            window.location.href = "mailto:julianmacagno_97@hotmail.com?subject=Test&body=" + JSON.stringify(people);
+        }
     }
     else
-        alert("No se puede guardar a las personas.")
+        alert("No se puede guardar a las personas. El navegador no es compatible.");
 }
 
 function radioClick(handler) {
@@ -150,7 +146,7 @@ function addRow(surname, name, relationship, birthdate, live, ocupation, email) 
 
 jQuery(document).ready(function() {
     if (typeof(Storage) !== undefined && localStorage.people !== undefined) {
-        var people = JSON.parse(localStorage.people);
+        people = JSON.parse(localStorage.people);
         people.forEach(p => {
             addRow(p.surname, p.name, p.relationship, p.birthdate, p.live, p.ocupation, p.email);
         });
