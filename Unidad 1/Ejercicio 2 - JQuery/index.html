@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./bootstrap-4.3.1/css/bootstrap.min.css">
+    <script src="./bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <form action="http://google.com.ar" method="GET">
+        <div class="container-fluid border">
+            <label>Oferta Acad&eacute;mica</label>
+            <div class="row border">
+                <div class="col-sm-2 border">
+                    <label>Apellido</label>
+                </div>
+                <div class="col">
+                    <input type="text" name="surname" id="isurname" class="form-control" required>
+                </div>
+            </div>
+            <div class="row border">
+                <div class="col-sm-2 border">
+                    <label>Nombre</label>
+                </div>
+                <div class="col">
+                    <input type="text" name="name" id="iname" class="form-control" required>
+                </div>
+            </div>
+            <div class="row border">
+                <div class="col-sm-2 border">
+                    <label>Email</label>
+                </div>
+                <div class="col">
+                    <input type="text" name="email" id="iemail" class="form-control" required>
+                </div>
+            </div>
+            <div class="row border">
+                <div class="col-sm-2 border">
+                    <label>Sexo</label>
+                </div>
+                <div class="col" id="radiosDiv">
+                    <label id="iLabelF"><input type="radio" name="gender" id="igenderF" value="female" required>Femenino</label>
+                    <label id="iLabelM"><input type="radio" name="gender" id="igenderM" value="male" required>Masculino</label>
+                </div>
+            </div>
+            <div class="row border">
+                <div class="col-sm-2 border">
+                    <label>Tel&eacute;fono</label>
+                </div>
+                <div class="col">
+                    <input type="number" name="telephone" id="itelephone" class="form-control" required>
+                </div>
+            </div>
+            <div class="row border">
+                <div class="col-sm-2 border">
+                    <label>Consulta</label>
+                </div>
+                <div class="col">
+                    <textarea name="query" id="iquery" maxlength="255" class="form-control" required></textarea>
+                    <label></label>255 caracteres</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <label>Carreras de inter&eacute;s</label>
+        <div class="container-fluid" id="container-carreras">
+            <div class="row border">
+                <label class="col"> Carrera </label>
+                <label class="col"> Interesado </label>
+                <label class="col"> Modalidades </label>    
+            </div>
+            <div class="row border" id="1">
+                <label class="col" id="2"> Arquitectura </label>
+                <input class="col" id="3" type="checkbox" onclick="checkboxClicked(this)" name="interested" id="iinterestedArq"> 
+                <select class="col" id="4" disabled>
+                    <option value="" selected></option>
+                    <option> Presencial </option>
+                    <option> Distancia </option>
+                    <option> Ambas </option>
+                </select>
+            </div>
+            <div class="row border">
+                <label class="col"> Contador p&uacute;blico </label>
+                <input class="col" type="checkbox" onclick="checkboxClicked(this)" name="interested" id="iinterestedCont"> 
+                <select class="col" disabled>
+                    <option value="" selected></option>
+                    <option> Presencial </option>
+                    <option> Distancia </option>
+                    <option> Ambas </option>
+                </select>
+            </div>
+            <div class="row border">
+                <label class="col"> Ingenier&iacute;a en Telecomunicaciones </label>
+                <input class="col" type="checkbox" onclick="checkboxClicked(this)" name="interested" id="iinterestedTele"> 
+                <select class="col" disabled>
+                    <option value="" selected></option>
+                    <option> Presencial </option>
+                    <option> Distancia </option>
+                    <option> Ambas </option>
+                </select>
+            </div>
+            <div class="row border">
+                <label class="col"> Ingenier&iacute;a en Inform&aacute;tica </label>
+                <input class="col" type="checkbox" onclick="checkboxClicked(this)" name="interested" id="iinterestedInf"> 
+                <select class="col" disabled>
+                    <option value="" selected></option>
+                    <option> Presencial </option>
+                    <option> Distancia </option>
+                    <option> Ambas </option>
+                </select>
+            </div>
+            <div class="row border">
+                <label class="col"> Licenciatura en Administraci&oacute;n </label>
+                <input class="col" type="checkbox" onclick="checkboxClicked(this)" name="interested" id="iinterestedAdm"> 
+                <select class="col" disabled>
+                    <option value="" selected></option>
+                    <option> Presencial </option>
+                    <option> Distancia </option>
+                    <option> Ambas </option>
+                </select>
+            </div>
+            <div class="row border">
+                <label class="col"> Licenciatura en Periodismo </label>
+                <input class="col" type="checkbox" onclick="checkboxClicked(this)" name="interested" id="iinterestedPer"> 
+                <select class="col" disabled>
+                    <option value="" selected></option>
+                    <option> Presencial </option>
+                    <option> Distancia </option>
+                    <option> Ambas </option>
+                </select>
+            </div>
+            <div class="row">
+                <label class="col"> Licenciatura en Turismo </label>
+                <input class="col" type="checkbox" onclick="checkboxClicked(this)" name="interested" id="iinterestedTur"> 
+                <select class="col" disabled>
+                    <option value="" selected></option>
+                    <option> Presencial </option>
+                    <option> Distancia </option>
+                    <option> Ambas </option>
+                </select>
+            </div>
+        </div>
+        <br>
+    </form>
+    <button type="submit" onclick="checkEmtpyFields()">Enviar</button>
+    <button>Limpiar</button>    
+</body>
+</html>

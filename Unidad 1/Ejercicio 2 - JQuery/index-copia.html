@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./bootstrap-4.3.1/css/bootstrap.min.css">
+    <script src="./bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <label>Oferta Acad&eacute;mica</label>
+    <table class="table table-bordered">
+        <tr>
+            <td>Apellido</td>
+            <td>
+                <input type="text" name="surname" id="isurname" required>
+            </td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td>
+                <input type="text" name="name" id="iname" required>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" name="email" id="iemail">
+            </td>
+        </tr>
+        <tr>
+            <td>Sexo</td>
+            <td>
+                <label><input type="radio" name="gender" id="igenderM" value="male">Masculino</label>
+                <label><input type="radio" name="gender" id="igenderF" value="female">Femenino</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Tel&eacute;fono</td>
+            <td>
+                <input type="number" name="telephone" id="itelephone">
+            </td>
+        </tr>
+        <tr>
+            <td>Consulta</td>
+            <td>
+                <textarea name="query" id="iquery" maxlength="255"></textarea>
+                <br>
+                <label></label>255 caracteres</label>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <label>Carreras de inter&eacute;s</label>
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th> Carrera </th>
+                <th> Interesado </th>
+                <th> Modalidades </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Arquitectura </td>
+                <td> 
+                    <input type="checkbox" name="interested" id="iinterestedArq"> 
+                </td>
+                <td>
+                        <select disabled>
+                        <option value="" selected>  </option>
+                        <option> Presencial </option>
+                        <option> Distancia </option>
+                        <option> Ambas </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> Contador p&uacute;blico </td>
+                <td> 
+                    <input type="checkbox" name="interested" id="iinterestedCont"> 
+                </td>
+                <td>
+                    <select disabled>
+                        <option value="" selected>  </option>
+                        <option> Presencial </option>
+                        <option> Distancia </option>
+                        <option> Ambas </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> Ingenier&iacute;a en Telecomunicaciones </td>
+                <td> 
+                    <input type="checkbox" name="interested" id="iinterestedTele"> 
+                </td>
+                <td>
+                    <select disabled>
+                        <option value="" selected>  </option>
+                        <option> Presencial </option>
+                        <option> Distancia </option>
+                        <option> Ambas </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> Ingenier&iacute;a en Inform&aacute;tica </td>
+                <td> 
+                    <input type="checkbox" name="interested" id="iinterestedInf"> 
+                </td>
+                <td>
+                    <select disabled>
+                        <option value="" selected>  </option>
+                        <option> Presencial </option>
+                        <option> Distancia </option>
+                        <option> Ambas </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> Licenciatura en Administraci&oacute;n </td>
+                <td> 
+                    <input type="checkbox" name="interested" id="iinterestedAdm"> 
+                </td>
+                <td>
+                    <select disabled>
+                        <option value="" selected>  </option>
+                        <option> Presencial </option>
+                        <option> Distancia </option>
+                        <option> Ambas </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> Licenciatura en Periodismo </td>
+                <td> 
+                    <input type="checkbox" name="interested" id="iinterestedPer"> 
+                </td>
+                <td>
+                    <select disabled>
+                        <option value="" selected>  </option>
+                        <option> Presencial </option>
+                        <option> Distancia </option>
+                        <option> Ambas </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> Licenciatura en Turismo </td>
+                <td> 
+                    <input type="checkbox" name="interested" id="iinterestedTur"> 
+                </td>
+                <td>
+                    <select disabled>
+                        <option value="" selected>  </option>
+                        <option> Presencial </option>
+                        <option> Distancia </option>
+                        <option> Ambas </option>
+                    </select>
+                </td>
+            </tr>            
+        </tbody>
+    </table>
+    <button>Enviar</button>
+    <button>Limpiar</button>
+    
+    
+</body>
+</html>
